@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App via API</title>
+    
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwvrBFlwvK5S9F5SCqCIqUhE8JAdy8TS8"></script>
+
+    <script type="text/javascript" src="scripts.js"></script>
+    
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    
+</head>
+
+<body>
+
+	<!--A wrapper for the app design-->
+    <div class="wrapper">
+    	
+        	<h2> Weather App in Javascript with JQuery</h2>
+            
+           <p> What is the temperature at your <span class='italic'>exact</span>location? Click the button to find out.</p>
+    
+  
+    
+    <!--here we will show the final result-->
+    	<p id="result">? •</p>
+        
+        
+        <!-- the map will go here -->
+        <div id="map"></div>
+    
+    
+    
+        <!--simple button-->
+        <button id="showTemp">Submit</button>
+        
+     </div><!--closes wrapper-->
+     
+     
+        
+</body>
+</html>
