@@ -32,17 +32,11 @@ $(document).ready(function() {
 
 				}
 				
-				
-				
-				
-								
-					
-				
 				navigator.geolocation.getCurrentPosition(getMap);
 					
 				var map;
 				function getMap(position) {
-					map = new google.maps.Map(document.getElementById('map'), {
+					map = new google.maps.Map(document.getElementById(			'map'), {
 						center: {
 							lat: position.coords.latitude,
 							lng: position.coords.longitude
@@ -54,7 +48,31 @@ $(document).ready(function() {
 				
 				$("#map").show();
 				
-				
+				 var layer_cloud = new OpenLayers.Layer.XYZ(
+       ` "clouds",
+        "http://${s}.tile.openweathermap.org/map/clouds/${z}/${x}/${y}.png",
+        {
+            isBaseLayer: false,
+            opacity: 0.7,
+            sphericalMercator: true
+        }
+    );
+
+    var layer_precipitation = new OpenLayers.Layer.XYZ(
+        "precipitation",
+        "http://${s}.tile.openweathermap.org/map/precipitation/${z}/${x}/${y}.png",
+        {
+            isBaseLayer: false,
+            opacity: 0.7,
+            sphericalMercator: true
+        }
+    );
+
+
+    map.addLayers([mapnik, layer_precipitation, layer_cloud]);
+	
+
+
 				
 				
 		});
